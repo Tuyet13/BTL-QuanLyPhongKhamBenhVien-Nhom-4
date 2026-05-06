@@ -1,0 +1,43 @@
+﻿@model FamilyDoctorMVC.Models.Patient
+
+@{
+    ViewData["Title"] = "Edit Patient";
+}
+
+<h2>Sửa bệnh nhân</h2>
+
+<form asp-action="Edit">
+
+    <input type="hidden" asp-for="PatientId" />
+
+    <label>Tên</label>
+    <input asp-for="PatientName" class="form-control" />
+
+    <label>Giới tính</label>
+    <select asp-for="Gender" class="form-control">
+        <option value="true">Nam</option>
+        <option value="false">Nữ</option>
+    </select>
+
+    <label>Ngày sinh</label>
+    <input asp-for="Dob" type="date" class="form-control" />
+
+    <label>Điện thoại</label>
+    <input asp-for="Phone" class="form-control" />
+
+    <label>Địa chỉ</label>
+    <input asp-for="Address" class="form-control" />
+
+    <label>Username</label>
+    <input asp-for="Username" class="form-control" />
+
+    <label>Password</label>
+    <input asp-for="Password" type="password" class="form-control" />
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">Update</button>
+
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+
+</form>

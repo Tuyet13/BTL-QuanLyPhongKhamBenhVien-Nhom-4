@@ -1,0 +1,11 @@
+﻿@using System.Data
+@model DataRow
+
+<h2>Medical Record Details</h2>
+
+<p><b>ID:</b> @Model["RecordId"]</p>
+<p><b>Appointment:</b> @Model["AppointmentId"]</p>
+<p><b>Diagnosis:</b> @Model["Diagnosis"]</p>
+<p><b>Note:</b> @Model["Note"]</p>
+
+<a asp-action="Index" class="btn btn-secondary">Back</a>

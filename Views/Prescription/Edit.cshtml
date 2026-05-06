@@ -1,0 +1,27 @@
+﻿@using System.Data
+@model DataRow
+
+<h2>Edit Prescription</h2>
+
+<form method="post">
+
+    <input type="hidden" name="PrescriptionId" value="@Model["PrescriptionId"]" />
+
+    <label>RecordId</label>
+    <input type="number" name="RecordId" value="@Model["RecordId"]" />
+
+    <br />
+
+    <label>Medicine</label>
+    <input type="text" name="MedicineName" value="@Model["MedicineName"]" />
+
+    <br />
+
+    <label>Quantity</label>
+    <input type="number" name="Quantity" value="@Model["Quantity"]" />
+
+    <br /><br />
+
+    <button type="submit">Update</button>
+
+</form>

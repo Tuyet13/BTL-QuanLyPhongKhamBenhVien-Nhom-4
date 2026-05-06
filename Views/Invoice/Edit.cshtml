@@ -1,0 +1,28 @@
+﻿@model FamilyDoctorMVC.Models.Invoice
+
+<h2>Edit Invoice</h2>
+
+<form asp-action="Edit">
+
+    <input type="hidden" asp-for="InvoiceId" />
+
+    <label>Appointment ID</label>
+    <input asp-for="AppointmentId" />
+
+    <label>Total Amount</label>
+    <input asp-for="TotalAmount" />
+
+    <label>Payment Date</label>
+    <input asp-for="PaymentDate" type="date" />
+
+    <label>Status</label>
+    <select asp-for="PaymentStatus">
+        <option value="Paid">Paid</option>
+        <option value="Pending">Pending</option>
+    </select>
+
+    <button type="submit">Update</button>
+
+</form>
+
+<a asp-action="Index">Back</a>

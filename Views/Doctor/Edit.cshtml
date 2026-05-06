@@ -1,0 +1,35 @@
+﻿@using System.Data
+@model DataTable
+
+@{
+    var row = Model.Rows[0];
+}
+
+<h2>Sửa bác sĩ</h2>
+
+<form method="post">
+
+    <div class="mb-3">
+        <label>Doctor Username</label>
+        <input name="DoctorUsr" value="@row["DoctorUsr"]" class="form-control" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label>Doctor Name</label>
+        <input name="DoctorName" value="@row["DoctorName"]" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Phone</label>
+        <input name="Phone" value="@row["Phone"]" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Address</label>
+        <input name="Address" value="@row["Address"]" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+
+</form>

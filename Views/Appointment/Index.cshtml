@@ -1,0 +1,75 @@
+﻿@model List<FamilyDoctorMVC.Models.Appointment>
+
+@{
+    ViewData["Title"] = "Appointment";
+}
+
+<h2 class="mb-3">Appointment List</h2>
+
+<a asp-action="Create" class="btn btn-primary mb-3">
+    + Create Appointment
+</a>
+
+<table class="table table-bordered table-striped">
+
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Patient</th>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th width="260">Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.AppointmentId</td>
+                <td>@item.PatientId</td>
+                <td>@item.DoctorUsr</td>
+
+                <td>@item.AppointmentDate.ToString("dd/MM/yyyy HH:mm")</td>
+
+                <td>
+                    <span class="badge bg-warning text-dark">
+                        @item.Status
+                    </span>
+                </td>
+
+                <td>
+
+                    <a asp-action="Details"
+                       asp-route-id="@item.AppointmentId"
+                       class="btn btn-info btn-sm">
+                        Details
+                    </a>
+
+                    <a asp-action="Edit"
+                       asp-route-id="@item.AppointmentId"
+                       class="btn btn-warning btn-sm">
+                        Edit
+                    </a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@item.AppointmentId"
+                       class="btn btn-danger btn-sm">
+                        Delete
+                    </a>
+
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-secondary">
+    Back Home
+</a>

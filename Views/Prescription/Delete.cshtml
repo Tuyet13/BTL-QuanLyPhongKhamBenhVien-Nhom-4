@@ -1,0 +1,18 @@
+﻿@using System.Data
+@model DataRow
+
+<h2>Delete Prescription</h2>
+
+<form method="post">
+
+    <input type="hidden" name="PrescriptionId" value="@Model["PrescriptionId"]" />
+
+    <p>Are you sure delete this medicine?</p>
+
+    <b>@Model["MedicineName"]</b>
+
+    <br /><br />
+
+    <button type="submit">Delete</button>
+
+</form>

@@ -1,0 +1,16 @@
+﻿@using System.Data
+@model DataRow
+
+<h2>Specialty Details</h2>
+
+<p>
+    <b>ID:</b> @Model["SpecialtyId"]
+</p>
+
+<p>
+    <b>Name:</b> @Model["SpecialtyName"]
+</p>
+
+<a asp-action="Index" class="btn btn-secondary">
+    Back
+</a>
