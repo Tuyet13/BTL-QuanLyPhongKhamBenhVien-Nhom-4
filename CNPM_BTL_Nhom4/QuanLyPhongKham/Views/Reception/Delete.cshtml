@@ -1,0 +1,41 @@
+﻿@model System.Data.DataRow
+
+<h2>Delete Appointment</h2>
+
+<h4>Are you sure?</h4>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>ID</th>
+        <td>@Model["AppointmentId"]</td>
+    </tr>
+
+    <tr>
+        <th>Patient</th>
+        <td>@Model["PatientName"]</td>
+    </tr>
+
+    <tr>
+        <th>Doctor</th>
+        <td>@Model["DoctorName"]</td>
+    </tr>
+
+</table>
+
+<form method="post">
+
+    <input type="hidden"
+           name="AppointmentId"
+           value="@Model["AppointmentId"]" />
+
+    <button class="btn btn-danger">
+        Delete
+    </button>
+
+    <a asp-action="Index"
+       class="btn btn-secondary">
+        Cancel
+    </a>
+
+</form>

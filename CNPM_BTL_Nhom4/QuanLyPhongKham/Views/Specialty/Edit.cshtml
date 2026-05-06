@@ -1,0 +1,31 @@
+﻿@using System.Data
+@model DataRow
+
+<h2>Edit Specialty</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden"
+           name="SpecialtyId"
+           value="@Model["SpecialtyId"]" />
+
+    <div class="form-group">
+        <label>Specialty Name</label>
+
+        <input name="SpecialtyName"
+               value="@Model["SpecialtyName"]"
+               class="form-control" />
+
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-warning">
+        Update
+    </button>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Back
+    </a>
+
+</form>

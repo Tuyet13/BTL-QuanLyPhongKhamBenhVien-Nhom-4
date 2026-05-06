@@ -1,0 +1,38 @@
+﻿<h2>Thêm bác sĩ</h2>
+
+<form method="post">
+
+    <div class="mb-3">
+        <label>Doctor Username</label>
+        <input name="DoctorUsr" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label>Password</label>
+        <input name="DoctorPwd" type="password" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label>Doctor Name</label>
+        <input name="DoctorName" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label>Phone</label>
+        <input name="Phone" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Address</label>
+        <input name="Address" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Save
+    </button>
+
+    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">
+        Back Home
+    </a>
+
+</form>

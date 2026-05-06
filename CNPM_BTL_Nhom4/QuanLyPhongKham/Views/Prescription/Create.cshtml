@@ -1,0 +1,33 @@
+﻿@using System.Data
+@model DataTable
+
+<h2>Create Prescription</h2>
+
+<form method="post">
+
+    <label>Record</label>
+
+    <select name="RecordId">
+
+        @foreach (DataRow row in Model.Rows)
+        {
+            <option value="@row["RecordId"]">@row["RecordId"]</option>
+        }
+
+    </select>
+
+    <br />
+
+    <label>Medicine</label>
+    <input type="text" name="MedicineName" />
+
+    <br />
+
+    <label>Quantity</label>
+    <input type="number" name="Quantity" />
+
+    <br /><br />
+
+    <button type="submit">Save</button>
+
+</form>

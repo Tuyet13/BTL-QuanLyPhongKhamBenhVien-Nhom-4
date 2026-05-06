@@ -1,0 +1,51 @@
+﻿@using System.Data
+@model DataTable
+
+<h2>Danh sách bác sĩ</h2>
+
+<a asp-action="Create" class="btn btn-success">Thêm bác sĩ</a>
+<a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Home</a>
+
+<table class="table table-bordered mt-3">
+
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Tên bác sĩ</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (DataRow row in Model.Rows)
+        {
+            <tr>
+
+                <td>@row["DoctorUsr"]</td>
+                <td>@row["DoctorName"]</td>
+                <td>@row["Phone"]</td>
+                <td>@row["Address"]</td>
+
+                <td>
+
+                    <a asp-action="Details" asp-route-id="@row["DoctorUsr"]" class="btn btn-info">Details</a>
+
+                    <a asp-action="Edit" asp-route-id="@row["DoctorUsr"]" class="btn btn-warning">Edit</a>
+
+                    <a asp-action="Delete" asp-route-id="@row["DoctorUsr"]"
+                       class="btn btn-danger"
+                       onclick="return confirm('Xóa bác sĩ này?')">
+                        Delete
+                    </a>
+
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>

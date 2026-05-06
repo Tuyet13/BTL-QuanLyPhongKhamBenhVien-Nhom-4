@@ -1,0 +1,52 @@
+﻿@using System.Data
+@model DataTable
+
+<h2>Medical Record List</h2>
+
+<a asp-action="Create" class="btn btn-success">Create</a>
+<a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Home</a>
+
+<table class="table table-bordered mt-3">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Appointment</th>
+            <th>Diagnosis</th>
+            <th>Note</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (DataRow row in Model.Rows)
+        {
+            <tr>
+
+                <td>@row["RecordId"]</td>
+                <td>@row["AppointmentId"]</td>
+                <td>@row["Diagnosis"]</td>
+                <td>@row["Note"]</td>
+
+                <td>
+
+                    <a asp-action="Details"
+                       asp-route-id="@row["RecordId"]"
+                       class="btn btn-info btn-sm">Details</a>
+
+                    <a asp-action="Edit"
+                       asp-route-id="@row["RecordId"]"
+                       class="btn btn-warning btn-sm">Edit</a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@row["RecordId"]"
+                       class="btn btn-danger btn-sm">Delete</a>
+
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
